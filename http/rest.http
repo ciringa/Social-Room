@@ -1,0 +1,20 @@
+POST http://127.0.0.1:2333/user/create HTTP/1.1
+Content-Type: application/json
+
+{
+    "Name": "dev",
+    "Email": "admin@gmail.com",
+    "Password":"admin",
+    "Description":"i am the admin"
+}
+
+###
+POST http://127.0.0.1:2333/posts/create HTTP/1.1
+Content-Type: application/json
+
+{   
+    "Title":"Community hello world",
+    "Content":"Ola mundo",
+    "Slug":"ola pessoas",
+    "ownerId":"634ef231-8601-431b-808b-990026e3e302",
+}
