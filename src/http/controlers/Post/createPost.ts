@@ -1,6 +1,6 @@
 import { FastifyReply, FastifyRequest } from "fastify";
 import { z } from "zod";
-import { prisma } from "../../lib/prisma";
+import {prisma} from "../../../lib/prisma"
 
 export async function CreateAPostControler(req:FastifyRequest, res:FastifyReply) {
     const {Content,Slug,ownerId,Title} = z.object({
