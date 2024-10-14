@@ -1,5 +1,6 @@
 import { Prisma, User } from "@prisma/client";
 import { UsersRepositorie } from "../../repositories/PrismaUserRepositories";
+import { InvalidResourceError } from "../Errors/Resources.Errors";
     /**
      * Creates a new user after validating that the provided email address is not already in use.
      * 
@@ -17,7 +18,7 @@ export class CreateUserUseCase {
     async execute(data:Prisma.UserCreateInput):Promise<User>{
         const doesTheEmailAdressIsAlreadyInUse = await this.userRepositorie.findByEmail(data.Email)
         if(doesTheEmailAdressIsAlreadyInUse){
-            throw new Error("Email Adress is already in use");
+            throw new InvalidResourceError({action:"tried to create a user",entity:"user", reason:"because the email already exists", resource:"Email"})
         }
 
         return await this.userRepositorie.create(data);
