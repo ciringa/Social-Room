@@ -14,22 +14,37 @@ datasource db {
 }
 
 model User{
+  //primary key
   Id String @id @default(uuid())
+
+  //user core data
   Name String 
   Email String @unique
   Password String
   Description String? 
+  
+  //Images url
+  ProfileUrl String? 
+  BannerUrl String?
 
+  // mention of postlist
   PostList Posts[]
 }
 
 model Posts{
+  //primary key
   Id String @id @default(uuid())
+  
+  //posts core data
   Content String
   Title String?
   Slug String
   Likes Int @default(0)
 
+  //image adress (if there's any)
+  ImageUrl String? 
+  
+  //user reference
   owner User @relation(fields: [ownerId],references: [Id])
   ownerId String 
 }

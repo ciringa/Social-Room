@@ -19,12 +19,12 @@ export async function LoginControler(req:FastifyRequest,res:FastifyReply) {
                 }
             })
             if(fp?.Password==Password){
-                res.status(200).send({
-                    Description:"successfully loggedIn",
-                    Token
-                })
                 res.setCookie("UserAuthorization",Token,{
                     maxAge:1000*60*60*24//um dia
+                })
+                res.status(200).send({
+                    Description:"successfully loggedIn",
+                    Token 
                 })
             }else{
                 res.redirect("https://http.cat/401")

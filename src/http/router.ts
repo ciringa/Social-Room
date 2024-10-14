@@ -13,6 +13,6 @@ export async function router(app:FastifyInstance) {
     app.post("/posts/create",{
         preHandler:[VerifyJWT]
     },CreateAPostControler)
-    app.get("/users/:UId",FindUserbyIdControler)
+    app.get("/user/:UId",FindUserbyIdControler)
     app.patch("/user/login",LoginControler)
 }
