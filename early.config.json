@@ -1,0 +1,8 @@
+{
+  "generatedTestStructure": "categories",
+  "testStructureVariant": "siblingFolder",
+  "showAllTreeSrcFiles": true,
+  "testFramework": "jest",
+  "testSuffix": "test",
+  "earlPanelEnabled": true
+}
