@@ -6,7 +6,6 @@ import { FindUserbyIdControler } from "./controlers/User/finUserById";
 import { LoginControler } from "./controlers/User/loginControler";
 import { VerifyJWT } from "./midlewares/VerifyJwt";
 
-
 export async function router(app:FastifyInstance) {
     app.post("/user/create",CreateUserControler)
     app.get("/posts/all/:page",ReturnPostListControler)

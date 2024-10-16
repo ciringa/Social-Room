@@ -1,6 +1,7 @@
 import { Prisma, User } from "@prisma/client";
-import { UsersRepositorie } from "../PrismaUserRepositories";
+import { UsersRepositorie } from "../UserRepositories";
 import { randomUUID } from "crypto";
+import { string } from "zod";
 
 /**
  * In Memory User repositorie, implements UsersRepositorie
@@ -9,7 +10,6 @@ import { randomUUID } from "crypto";
  * @method findByEmail
  * @method findById
  */
-
 export class inMemoryUserRepositorie implements UsersRepositorie{
     public itemList:User[] = [];
     
@@ -26,6 +26,8 @@ export class inMemoryUserRepositorie implements UsersRepositorie{
             Password:String(data.Password),
             Description:data.Description?String(data.Description):null,
             Id:randomUUID(),
+            BannerUrl:data.BannerUrl?String(data.BannerUrl):null,
+            ProfileUrl:data.ProfileUrl?String(data.ProfileUrl):null,
         }
         this.itemList.push(_data)
 

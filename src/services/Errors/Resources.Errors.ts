@@ -5,3 +5,4 @@ export class InvalidResourceError extends Error{
         super(`Cant ${error.action} because ${error.reason} in ${error.entity}. Provided ${error.resource}`);
     }
 }
+

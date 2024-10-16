@@ -1,5 +1,5 @@
 import { Prisma, User } from "@prisma/client";
-import { UsersRepositorie } from "../../repositories/PrismaUserRepositories";
+import { UsersRepositorie } from "../../repositories/UserRepositories";
 import { InvalidResourceError } from "../Errors/Resources.Errors";
     /**
      * Creates a new user after validating that the provided email address is not already in use.

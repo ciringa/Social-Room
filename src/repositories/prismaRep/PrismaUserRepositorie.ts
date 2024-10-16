@@ -1,5 +1,5 @@
 import { Prisma, User } from "@prisma/client";
-import { UsersRepositorie } from "../PrismaUserRepositories";
+import { UsersRepositorie } from "../UserRepositories";
 import { prisma } from "../../lib/prisma";
 import { create } from "domain";
 
