@@ -1,3 +1,4 @@
+import { errorRelation } from "../../dtos/ErrorTreatmentInterface";
 
 
 export class EntityErrors extends Error{
